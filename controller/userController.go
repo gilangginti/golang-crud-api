@@ -129,6 +129,6 @@ func Validate(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"status":  http.StatusOK,
 		"data":    nil,
-		"message": "Success Get Data With Middleware",
+		"message": "Success You have token",
 	})
 }

@@ -18,12 +18,11 @@ func main() {
 	defer r.Run()
 
 	//Router
-
 	//User Rotuer
 	r.POST("/register", controller.SignUp)
 	r.POST("/login", controller.Login)
 
 	//Validate
-	r.GET("/validate", middleware.RequireAuth, controller.Validate)
+	r.GET("/", middleware.RequireAuth, controller.Validate)
 
 }
