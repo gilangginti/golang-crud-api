@@ -1,14 +1,11 @@
-# golang-crud-api
- 
- 
-# Feature
- 
-Auth
+# GOLANG API
 
--Login with JWT
--Register
--Middleware
+Simple golang api with gorm, gin, postgresql
 
-Database
--PostgreSQL AZURE
--Migration with gorm
+
+## Feature
+
+ - Auth
+ - Middleware
+ - Migration
+
