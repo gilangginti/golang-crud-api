@@ -4,13 +4,13 @@ import (
 	"github.com/gin-gonic/gin"
 	"golang-crud-api/controller"
 	"golang-crud-api/initializers"
-	"golang-crud-api/migration"
+	"golang-crud-api/middleware"
 )
 
 func init() {
 	initializers.LoadEnvVariables()
 	initializers.ConnectToDb()
-	migration.UserMigration()
+	//migration.UserMigration()
 }
 
 func main() {
@@ -20,6 +20,10 @@ func main() {
 	//Router
 
 	//User Rotuer
-	r.POST("/user", controller.SignUp)
+	r.POST("/register", controller.SignUp)
+	r.POST("/login", controller.Login)
+
+	//Validate
+	r.GET("/validate", middleware.RequireAuth, controller.Validate)
 
 }
